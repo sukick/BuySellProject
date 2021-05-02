@@ -14,7 +14,7 @@ const funcThatReturnsRouter = (db) => {
 
   // GET /posts/:id
   router.get('/:id', (req, res) => {
-    userFunctions.getUserById()
+    userFunctions.getUserById(req.params.id)
       .then((user) => {
         res.send(user);
       });

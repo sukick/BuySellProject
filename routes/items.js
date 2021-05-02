@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const productFunctions = require('../db/product-queries');
+const itemFunctions = require('../lib/items_queries');
 
 router.use((req, res, next) => {
   // if (!req.cookies.user_id) {
@@ -14,17 +14,17 @@ router.use((req, res, next) => {
 
 // GET /products/
 router.get('/', (req, res) => {
-  productFunctions.getProducts()
-    .then((products) => {
-      res.json(products);
+  itemFunctions.getProducts()
+    .then((items) => {
+      res.json(items);
     });
 });
 
 // GET /products/:id
 router.get('/:id', (req, res) => {
-  productFunctions.getProductById(req.params.id)
-    .then((product) => {
-      res.json(product);
+  itemFunctions.getProductById(req.params.id)
+    .then((item) => {
+      res.json(item);
     });
 });
 

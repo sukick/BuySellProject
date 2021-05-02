@@ -6,8 +6,8 @@ const funcThatReturnsRouter = (db) => {
   // GET /posts
   router.get('/', (req, res) => {
     userFunctions.getUsers()
-      .then((response) => {
-        res.json(response.rows);
+      .then((user) => {
+        res.json(user);
         // res.render('posts', {posts: response.rows});
       });
   });
@@ -15,8 +15,8 @@ const funcThatReturnsRouter = (db) => {
   // GET /posts/:id
   router.get('/:id', (req, res) => {
     userFunctions.getUserById()
-      .then((response) => {
-        res.send(response.rows[0]);
+      .then((user) => {
+        res.send(user);
       });
   });
 

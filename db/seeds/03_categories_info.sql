@@ -1,4 +1,4 @@
-INSERT INTO categories (name) VALUES ('shoes');
-INSERT INTO categories (name) VALUES ('boots');
-INSERT INTO categories (name) VALUES ('slippers');
+INSERT INTO categories (name) VALUES ('Acoustic');
+INSERT INTO categories (name) VALUES ('Electric');
+INSERT INTO categories (name) VALUES ('Kids');
 

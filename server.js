@@ -8,6 +8,7 @@ const express    = require("express");
 const bodyParser = require("body-parser");
 const app        = express();
 const morgan     = require('morgan');
+const cookiesession = require('cookie-session');
 
 // PG database client/connection setup
 //const { Pool } = require('pg');
@@ -19,7 +20,7 @@ const db = require('./lib/db');
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
 app.use(morgan('dev'));
-
+app.use(cookiesession({ name: 'session', keys:['key1']}));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -37,6 +38,11 @@ app.use('/users', usersRouter(db));
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+app.get('/testlogin/:id', (req, res) => {
+  req.session.user_id = req.params.id;
+  res.redirect('/');
 });
 
 app.listen(PORT, () => {

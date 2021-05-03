@@ -42,20 +42,9 @@ const funcThatReturnsRouter = (db) => {
       })
   });
 
-  // POST
 
 
-  // DELETE :ID
-//   router.delete('/:messageId', (req, res) => {
-//     const {
-//       [req.params.messageId]: message,
-//       ...otherMessages
-//     } = req.context.models.messages;
 
-//     req.context.models.messages = otherMessages;
-
-//     return res.send(message);
-//   });
 
   return router;
 };

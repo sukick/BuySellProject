@@ -70,7 +70,7 @@ router.post('/', (req, res) => {
       user_id: req.session.user_id
     };
 
-    itemFunctions.postItemById(item.brand, item.price, item.product_number, item.condition, item.description, item.user_id)
+    itemFunctions.deleteItemById(item.brand, item.price, item.product_number, item.condition, item.description, item.user_id)
     .then((postedItem) => {
       res.send(postedItem);
     })

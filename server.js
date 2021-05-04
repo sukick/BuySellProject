@@ -40,6 +40,11 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+// app.post("/items/:id", (req, res) => {
+//   console.log("SOMETHING_______");
+//   res.send({ data: 400 });
+// });
+
 app.get('/testlogin/:id', (req, res) => {
   req.session.user_id = req.params.id;
   res.redirect('/');

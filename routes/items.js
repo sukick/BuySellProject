@@ -34,13 +34,9 @@ router.get('/:id', (req, res) => {
     })
 });
 
-// Post route to create items
+// POST /create items
 router.post('/', (req, res) => {
 
-  console.log("req boduusers:", req.body.users);
-  console.log("req params:", req.params);
-  console.log("req body:", req.body);
-  console.log("req session:", req.session);
   const item = {
     brand: req.body.brand,
     price: req.body.price,
@@ -57,29 +53,20 @@ router.post('/', (req, res) => {
   .catch(err => {
     return console.log("query error", err);
   })
+});
 
-  //DELETE ITEM
-  // router.post('/:id', (req, res, next) => {
+//POST delete items
+router.post('/:item_id', (req, res, next) => {
+  const itemId = req.params.item_id;
 
-  //   const item = {
-  //     brand: req.body.brand,
-  //     price: req.body.price,
-  //     product_number: req.body.product_number,
-  //     condition: req.body.condition,
-  //     description: req.body.description,
-  //     user_id: req.session.user_id
-  //   };
+  itemFunctions.deleteItemById(itemId)
+  .then((postedItem) => {
+    res.send(postedItem);
+  })
+  .catch(err => {
+    return console.log("query error", err);
+  })
+});
 
-  //   itemFunctions.postItemById(item.brand, item.price, item.product_number, item.condition, item.description, item.user_id)
-  //   .then((postedItem) => {
-  //     res.send(postedItem);
-  //   })
-  //   .catch(err => {
-  //     return console.log("query error", err);
-  //   })
-
-  });
-// });
-
-
+//itemFunctions.deleteItemById(300); //testing the by calling the function
 module.exports = router;

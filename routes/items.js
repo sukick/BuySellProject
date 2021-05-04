@@ -34,13 +34,9 @@ router.get('/:id', (req, res) => {
     })
 });
 
-// Post route to create items
+// POST /create items
 router.post('/', (req, res) => {
 
-  // console.log("req boduusers:", req.body.users);
-  // console.log("req params:", req.params);
-  // console.log("req body:", req.body);
-  // console.log("req session:", req.session);
   const item = {
     brand: req.body.brand,
     price: req.body.price,
@@ -59,10 +55,10 @@ router.post('/', (req, res) => {
   })
 });
 
-//DELETE ITEM
+//POST delete items
 router.post('/:item_id', (req, res, next) => {
   const itemId = req.params.item_id;
-  //console.log("______DELETE ROUTE", itemId)
+
   itemFunctions.deleteItemById(itemId)
   .then((postedItem) => {
     res.send(postedItem);

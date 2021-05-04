@@ -59,27 +59,27 @@ router.post('/', (req, res) => {
   })
 
   //DELETE ITEM
-  router.post('/:id', (req, res, next) => {
+  // router.post('/:id', (req, res, next) => {
 
-    const item = {
-      brand: req.body.brand,
-      price: req.body.price,
-      product_number: req.body.product_number,
-      condition: req.body.condition,
-      description: req.body.description,
-      user_id: req.session.user_id
-    };
+  //   const item = {
+  //     brand: req.body.brand,
+  //     price: req.body.price,
+  //     product_number: req.body.product_number,
+  //     condition: req.body.condition,
+  //     description: req.body.description,
+  //     user_id: req.session.user_id
+  //   };
 
-    itemFunctions.postItemById(item.brand, item.price, item.product_number, item.condition, item.description, item.user_id)
-    .then((postedItem) => {
-      res.send(postedItem);
-    })
-    .catch(err => {
-      return console.log("query error", err);
-    })
+  //   itemFunctions.postItemById(item.brand, item.price, item.product_number, item.condition, item.description, item.user_id)
+  //   .then((postedItem) => {
+  //     res.send(postedItem);
+  //   })
+  //   .catch(err => {
+  //     return console.log("query error", err);
+  //   })
 
   });
-});
+// });
 
 
 module.exports = router;

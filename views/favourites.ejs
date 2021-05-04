@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home Page</title>
+
+    <!-- <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css"> -->
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+
+
+  </head>
+
+  <body>
+    <%- include partials/nav.ejs %>
+
+    <h1>Favourites</h1>
+    <form action="items" method="POST">
+      <label for="brand">Brand:</label>
+      <input type="text" id="brand" name="brand"><br><br>
+      <label for="price">Price:</label>
+      <input type="text" id="price" name="price"><br><br>
+      <label for="product_number"> Product_number:</label>
+      <input type="text" id="product_number" name="product_number"><br><br>
+      <label for="condition">Condition:</label>
+      <input type="text" id="condition" name="condition"><br><br>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description"><br><br>
+      <button>Submit</button>
+      <button>Delete</button>
+    </form>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="public/scripts/materialize.min.js"></script>
+  <script type="text/javascript" src="public/scripts/materialize.js"></script>
+  <script type="text/javascript" src="public/scripts/init.js"></script>
+
+  </body>
+
+
+</html>

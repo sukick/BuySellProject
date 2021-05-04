@@ -23,6 +23,7 @@ app.use(morgan('dev'));
 app.use(cookiesession({ name: 'session', keys:['key1']}));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 const itemsRouter = require('./routes/items');
 const usersRouter = require('./routes/users');
@@ -38,6 +39,10 @@ app.use('/users', usersRouter(db));
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+app.get("/favourites", (req, res) => {
+  res.render("favourites");
 });
 
 app.get('/testlogin/:id', (req, res) => {

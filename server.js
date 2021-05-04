@@ -41,6 +41,10 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.get("/favourites", (req, res) => {
+  res.render("favourites");
+});
+
 app.get('/testlogin/:id', (req, res) => {
   req.session.user_id = req.params.id;
   res.redirect('/');

@@ -45,6 +45,10 @@ app.get("/favourites", (req, res) => {
   res.render("favourites");
 });
 
+app.get("/item", (req, res) => {
+  res.render("item");
+});
+
 app.get('/testlogin/:id', (req, res) => {
   req.session.user_id = req.params.id;
   res.redirect('/');

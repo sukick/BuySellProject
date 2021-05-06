@@ -6,9 +6,10 @@
 <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
 
-<
+ <!-- Icons CSS -->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-!-- Compiled and minified CSS -->
+<!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 <!-- Compiled and minified JavaScript -->
@@ -21,10 +22,30 @@
 
   <body>
     <%- include partials/nav.ejs %>
+    <div class="row center-align">
+      <h2>STRUMMER</h2>
+    </div>
 
     <div class="row">
-      <div class="col s6 offset-s6"><span class="flow-text">6-columns (offset-by-6)</span></div>
+      <div class="col s10 offset-s1">
+        <div class="col s6">
+          <img src="/img/guitar.jpg" alt="guitar" width="350" height="400">
+        </div>
+        <div class="col s4">
+          <h6>$379</h6>
+          <form action="items" method="POST" class="itemsform">
+            <label for="brand" class="itemunit">Brand:</label>
+            <label for="price" class="itemunit">Price:</label>
+            <label for="product_number" class="itemunit"> Product_number:</label>
+            <label for="condition" class="itemunit">Condition:</label>
+            <label for="description" class="itemunit lastitem">Description:</label>
+            <a class="waves-effect waves-light btn-small center-align"><i class="material-icons left">attach_money</i>BUY</a>
+          </form >
+        </div>
+      </div>
+
     </div>
+
 
   </body>
 

@@ -16,6 +16,7 @@ router.use((req, res, next) => {
 router.get('/', (req, res) => {
   itemFunctions.getProducts()
     .then((items) => {
+      console.log("THESE ARE ITEMS",items);
       res.json(items);
     })
     .catch(err => {

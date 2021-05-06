@@ -4,7 +4,7 @@
     <title>Home Page</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/styles.css" type="text/css">
+
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -20,11 +20,13 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css">
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/uxfunctions.js"></script>
+    <script type="text/javascript" src="/scripts/uxfunctions.js"></script>
 
   </head>
   <body>
@@ -38,6 +40,7 @@
     <div class="row">
       <div class="right">
         <form action="" method="POST">
+
          <div class="left min">
           <label for="min">Min:</label>
           <input type="text" id="min" name="min">
@@ -46,11 +49,18 @@
           <label for="max">Max:</label>
           <input type="text" id="max" name="max">
         </div>
+        <div class="button">
+          <button class="filter"></button>
+        </div>
         </form>
+
      </div>
     </div>
-
+    <div id="mydiv" data-test=<%= data %>></div>
+    <input type="hidden" value="<%= data %>" id="hiddendata"></input>
     <div class="row">
+      <%   for (let product of data) {  %>
+
       <div class="col s4 m4 ">
         <div class="card medium box">
           <div class="card-image">
@@ -59,191 +69,30 @@
             </a>
 
           </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            </p>
-          </div>
+
+
+            <% if (product) { %>
+              <div class="card-content">
+                <label for="brand" class="itemunit cardunit">Brand__: <%= product.brand %> </label>
+                <label for="price" class="itemunit cardunit">Price:  <%= product.price %> </label>
+                <p> <%= product.description %>
+                </p>
+              </div>
+            <% } %>
+
+
+
           <div class="card-action">
             <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right" ><i class="material-icons " >favorite</i></a>
-            <a href="mailto:admin@strummer.com" target="_blank" class="btn-floating btn-small waves-effect waves-light red lighten-2 right fav"><i class="material-icons ">email</i></a>
+            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right fav" ><i class="material-icons " >favorite</i></a>
+            <a href="mailto:admin@strummer.com" target="_blank" class="btn-floating btn-small waves-effect waves-light red lighten-2 right "><i class="material-icons ">email</i></a>
           </div>
         </div>
+
       </div>
-
-      <div class="col s4 m4">
-        <div class="card medium box">
-          <div class="card-image">
-            <img src="/img/article1.jpg">
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            </p>
-          </div>
-          <div class="card-action">
-            <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">favorite</i></a>
-            <a href="mailto:admin@strummer.com" target="_blank" class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">email</i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s4 m4">
-        <div class="card medium box">
-          <div class="card-image">
-            <img src="/img/article1.jpg">
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-           </p>
-          </div>
-          <div class="card-action">
-            <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">favorite</i></a>
-            <a href="mailto:admin@strummer.com" target="_blank" class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">email</i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col s4 m4 ">
-        <div class="card medium box">
-          <div class="card-image">
-            <img src="/img/article1.jpg">
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            </p>
-          </div>
-          <div class="card-action">
-            <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons ">favorite</i></a>
-            <a href="mailto:admin@strummer.com" target="_blank"  class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons ">email</i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s4 m4">
-        <div class="card medium box">
-          <div class="card-image">
-            <img src="/img/article1.jpg">
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            </p>
-          </div>
-          <div class="card-action">
-            <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">favorite</i></a>
-            <a href="mailto:admin@strummer.com" target="_blank"  class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">email</i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s4 m4">
-        <div class="card medium box">
-          <div class="card-image">
-            <img src="/img/article1.jpg">
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-           </p>
-          </div>
-          <div class="card-action">
-            <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">favorite</i></a>
-            <a href="mailto:admin@strummer.com" target="_blank"  class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">email</i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col s4 m4 ">
-        <div class="card medium box">
-          <div class="card-image">
-            <img src="/img/article1.jpg">
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            </p>
-          </div>
-          <div class="card-action">
-            <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right fav"><i class="material-icons ">favorite</i></a>
-            <a href="mailto:admin@strummer.com" target="_blank"  class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons ">email</i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s4 m4">
-        <div class="card medium box">
-          <div class="card-image">
-            <img src="/img/article1.jpg">
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-            </p>
-          </div>
-          <div class="card-action">
-            <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">favorite</i></a>
-            <a href="mailto:admin@strummer.com" target="_blank"  class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">email</i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col s4 m4">
-        <div class="card medium box">
-          <div class="card-image">
-            <img src="/img/article1.jpg">
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information.
-           </p>
-          </div>
-          <div class="card-action">
-            <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">favorite</i></a>
-            <a href="mailto:admin@strummer.com" target="_blank"  class="btn-floating btn-small waves-effect waves-light red lighten-2 right"><i class="material-icons">email</i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
+      <% } %>
   </main>
 
-
-    <!-- <h1>Create Item</h1>
-    <form action="items" method="POST">
-      <label for="brand">Brand:</label>
-      <input type="text" id="brand" name="brand"><br><br>
-      <label for="price">Price:</label>
-      <input type="text" id="price" name="price"><br><br>
-      <label for="product_number"> Product_number:</label>
-      <input type="text" id="product_number" name="product_number"><br><br>
-      <label for="condition">Condition:</label>
-      <input type="text" id="condition" name="condition"><br><br>
-      <label for="description">Description:</label>
-      <input type="text" id="description" name="description"><br><br>
-      <button>Submit</button>
-    </form > -->
-<!-- <% %>
-    <form action="items/12" method="POST">
-      <button>Delete</button>
-    </form> -->
-
-<!--
-  <form action="sort">
-
-    <button><a onClick=sort()> Sort</a></button>
-
-  </form> -->
-
-  </body>
   <footer class="page-footer">
     <div class="container">
       <div class="row">
@@ -268,9 +117,6 @@
       </div>
     </div>
   </footer>
- <!--JavaScript at end of body for optimized loading-->
- <script type="text/javascript" src="public/scripts/materialize.min.js"></script>
- <script type="text/javascript" src="public/scripts/materialize.js"></script>
- <script type="text/javascript" src="public/scripts/init.js"></script>
 
+</body>
 </html>

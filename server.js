@@ -9,6 +9,7 @@ const bodyParser = require("body-parser");
 const app        = express();
 const morgan     = require('morgan');
 const cookiesession = require('cookie-session');
+const itemFunctions = require('./lib/items_queries');
 
 // PG database client/connection setup
 //const { Pool } = require('pg');
@@ -37,8 +38,32 @@ app.use('/users', usersRouter(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
+
+app.get('/api/users', (req, res) => {
+
+
+  res.send("STRUMMER");
+
+})
+
 app.get("/", (req, res) => {
-  res.render("index");
+  //let userData = '';
+  itemFunctions.getProducts()
+    .then((data) => {
+      //userData = items;
+      console.log("THESE ARE ITEMS", data)
+      res.render("index", {data});
+    })
+    .catch(err => {
+      return console.log("query error", err);
+    })
+});
+
+app.get('/users', (req, res) => {
+
 });
 
 app.get("/favourites", (req, res) => {

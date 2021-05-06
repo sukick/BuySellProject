@@ -1,0 +1,104 @@
+.nav-wrapper {
+  background-color: #ee6e73;
+}
+
+/* card */
+article {
+  width: 300px;
+  height: 500px;
+  background:url("/img/guitar.jpg");
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+header{
+  background: url("/img/guitar.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+}
+
+.brand-logo {
+  margin-left: 1%;
+}
+
+h2 {
+  color: #ee6e73;
+}
+
+
+
+
+.box {
+  transition: box-shadow .3s;
+  border-radius:10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  float: left;
+}
+
+.box:hover {
+  box-shadow: 0 0 11px #ee6e73;
+}
+
+.subtext {
+  color: #ee6e73;
+}
+
+.min, .max {
+  width: 7rem;
+}
+
+.min label {
+  color: #ee6e73;
+}
+
+.max label {
+  color: #ee6e73;
+}
+
+.card-content {
+  color: #544f4f;
+}
+
+btn-small {
+  padding-right: 3rem;
+}
+
+.page-footer {
+  background-color: ee6e73;
+}
+
+/*ITEM page*/
+.s4 {
+  margin: 0 auto;
+  max-width: 300px;
+  width: 90%;
+
+}
+.itemsform {
+  display: flex;
+  flex-direction: column;
+  margin-top:2rem;
+}
+.cardunit {
+  margin-right: 3rem;;
+}
+
+.itemunit {
+  margin-top:2rem;
+}
+
+.lastitem {
+  margin-bottom: 2rem;
+}
+
+
+
+@media screen and (max-width: 670px){
+  header{
+    min-height: 500px;
+  }
+}
+

@@ -68,10 +68,11 @@ app.get('/users', (req, res) => {
 });
 
 app.get("/post", (req, res) => {
+  console.log("Trying to Posttttt!!!! GET");
   res.render("post");
 });
 
-app.get("/item", (req, res) => {
+app.get("/item/", (req, res) => {
   res.render("item");
 });
 

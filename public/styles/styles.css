@@ -100,6 +100,11 @@ btn-small {
   margin-bottom: 2rem;
 }
 
+/*post page*/
+.inputlabel{
+height: 2.5rem !important;
+}
+
 
 
 @media screen and (max-width: 670px){

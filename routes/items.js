@@ -41,9 +41,10 @@ router.post('/filter', (req, res) => {
 
 // GET /products/:id
 router.get('/:id', (req, res) => {
-  itemFunctions.getProductById(req.params.id)
+  itemFunctions.getItemById(req.params.id)
     .then((item) => {
-      res.json(item);
+      console.log("ITEM______", item);
+      res.render("item", {item: item});
     })
     .catch(err => {
       return console.log("query error", err);
@@ -52,19 +53,20 @@ router.get('/:id', (req, res) => {
 
 // POST /create items
 router.post('/post', (req, res) => {
-
+  console.log("trying to sell!!!")
+  console.log("req.body_________", req.body);
   const item = {
     brand: req.body.brand,
     price: req.body.price,
-    product_number: req.body.product_number,
+    product_number: req.body.productnumber,
     condition: req.body.condition,
     description: req.body.description,
     user_id: req.session.user_id
   };
-
   itemFunctions.postItemById(item.brand, item.price, item.product_number, item.condition, item.description, item.user_id)
   .then((postedItem) => {
-    res.send(postedItem);
+    
+    res.redirect("/items/" + postedItem.id);
   })
   .catch(err => {
     return console.log("query error", err);

@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 const itemFunctions = require('../lib/items_queries');
 
-router.use((req, res, next) => {
-  // if (!req.cookies.user_id) {
-  //   res.redirect('/login');
-  // }
+// router.use((req, res, next) => {
+//   // if (!req.cookies.user_id) {
+//   //   res.redirect('/login');
+//   // }
 
-  console.log('inside the product router');
+  
 
-  next();
-});
+//   next();
+// });
 
 // GET /products/
 router.get('/', (req, res) => {
@@ -18,6 +18,23 @@ router.get('/', (req, res) => {
     .then((items) => {
       console.log("THESE ARE ITEMS",items);
       res.json(items);
+    })
+    .catch(err => {
+      return console.log("query error", err);
+    })
+});
+
+router.post('/filter', (req, res) => {
+  const min = req.body.min;
+  const max = req.body.max;
+  if (!min || !max) {
+    return res.send("Please provide a min and max price");
+  }
+  itemFunctions.getFilterProducts(min, max)
+    .then((items) => {
+      console.log("THESE ARE ITEMS",items);
+      // res.json(items);
+      res.render("index", {products: items});
     })
     .catch(err => {
       return console.log("query error", err);

@@ -50,12 +50,14 @@ app.get('/api/users', (req, res) => {
 })
 
 app.get("/", (req, res) => {
+  
   //let userData = '';
+  
   itemFunctions.getProducts()
-    .then((data) => {
+    .then((products) => {
       //userData = items;
-      console.log("THESE ARE ITEMS", data)
-      res.render("index", {data});
+      console.log("THESE ARE ITEMS", products)
+      res.render("index", {products});
     })
     .catch(err => {
       return console.log("query error", err);

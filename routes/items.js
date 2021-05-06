@@ -16,7 +16,6 @@ const itemFunctions = require('../lib/items_queries');
 router.get('/', (req, res) => {
   itemFunctions.getProducts()
     .then((items) => {
-      console.log("THESE ARE ITEMS",items);
       res.json(items);
     })
     .catch(err => {
@@ -32,7 +31,6 @@ router.post('/filter', (req, res) => {
   }
   itemFunctions.getFilterProducts(min, max)
     .then((items) => {
-      console.log("THESE ARE ITEMS",items);
       // res.json(items);
       res.render("index", {products: items});
     })
@@ -53,7 +51,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /create items
-router.post('/', (req, res) => {
+router.post('/post', (req, res) => {
 
   const item = {
     brand: req.body.brand,

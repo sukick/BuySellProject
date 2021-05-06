@@ -58,6 +58,12 @@ h2 {
   color: #ee6e73;
 }
 
+.filter {
+  display: flex;
+  align-items: center;
+
+}
+
 .card-content {
   color: #544f4f;
 }
@@ -70,7 +76,7 @@ btn-small {
   background-color: ee6e73;
 }
 
-/*ITEM page*/
+/*item page*/
 .s4 {
   margin: 0 auto;
   max-width: 300px;

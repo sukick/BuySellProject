@@ -56,7 +56,6 @@ app.get("/", (req, res) => {
   itemFunctions.getProducts()
     .then((products) => {
       //userData = items;
-      console.log("THESE ARE ITEMS", products)
       res.render("index", {products});
     })
     .catch(err => {
@@ -68,8 +67,8 @@ app.get('/users', (req, res) => {
 
 });
 
-app.get("/favourites", (req, res) => {
-  res.render("favourites");
+app.get("/post", (req, res) => {
+  res.render("post");
 });
 
 app.get("/item", (req, res) => {

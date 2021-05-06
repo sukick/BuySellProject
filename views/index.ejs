@@ -38,9 +38,9 @@
     <p class="center-align subtext"> Best guitars to be rock star</p>
 
     <div class="row">
-      <div class="right">
+      <div class="right filter">
         <form action="../items/filter" method="POST">
-
+          
          <div class="left min">
           <label for="min">Min:</label>
           <input type="text" id="min" name="min">
@@ -48,9 +48,11 @@
         <div class="right max">
           <label for="max">Max:</label>
           <input type="text" id="max" name="max">
-        </div>
+        </div> 
         <div class="button">
-          <input type="submit" class="filter">Filter</input>
+          <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
         </div>
         </form>
 
@@ -103,7 +105,7 @@
           <h5 class="white-text">Links</h5>
           <ul>
             <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Favourites</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Post</a></li>
 
           </ul>
         </div>

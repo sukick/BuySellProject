@@ -66,11 +66,10 @@
         <div class="card medium box">
           <div class="card-image">
             <a target="_blank" href="/item.ejs">
-              <img src="/img/article1.jpg" alt="guitar">
+              <img src= '<%= product.image %>' alt="guitar">
             </a>
 
           </div>
-
 
             <% if (product) { %>
               <div class="card-content">
@@ -78,13 +77,20 @@
                 <label for="price" class="itemunit cardunit">Price:  <%= product.price %> </label>
                 <p> <%= product.description %>
                 </p>
+              
+
               </div>
+        
             <% } %>
 
 
 
           <div class="card-action">
-            <a class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
+            <% if (  product.sold ) { %>
+              <a href= "#" class="waves-effect waves-light btn-small"><i class="material-icons left"></i>SOLD</a>
+            <% } else { %>
+              <a href= "/items/<%= product.items_id%>" class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
+            <% } %> 
             <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right fav" ><i class="material-icons " >favorite</i></a>
             <a href="mailto:admin@strummer.com" target="_blank" class="btn-floating btn-small waves-effect waves-light red lighten-2 right "><i class="material-icons ">email</i></a>
           </div>

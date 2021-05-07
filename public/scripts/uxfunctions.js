@@ -8,6 +8,14 @@ $(function() {
 
   });
 
+  $('#image').on('change', function(param) {
+    
+    const imageURL = $( this ).val()
+    if (imageURL.startsWith('http')) {
+      $('#productImage').attr('src', imageURL)
+    }
+  })
+
 });
 
 

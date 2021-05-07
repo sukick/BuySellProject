@@ -76,6 +76,10 @@ app.get("/item/", (req, res) => {
   res.render("item");
 });
 
+app.get("/item_admin", (req, res) => {
+  res.render("item_admin");
+});
+
 app.get('/testlogin/:id', (req, res) => {
   req.session.user_id = req.params.id;
   res.redirect('/');

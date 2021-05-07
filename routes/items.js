@@ -60,13 +60,14 @@ router.post('/post', (req, res) => {
     price: req.body.price,
     product_number: req.body.productnumber,
     condition: req.body.condition,
+    image: req.body.image,
     description: req.body.description,
     user_id: req.session.user_id
   };
-  itemFunctions.postItemById(item.brand, item.price, item.product_number, item.condition, item.description, item.user_id)
+  itemFunctions.postItemById(item)
   .then((postedItem) => {
     
-    res.redirect("/items/" + postedItem.id);
+    res.redirect("/items/" + postedItem.items_id);
   })
   .catch(err => {
     return console.log("query error", err);
@@ -75,11 +76,12 @@ router.post('/post', (req, res) => {
 
 //POST delete items
 router.post('/:item_id', (req, res, next) => {
+  console.log("DeleteRoute_____", req.params);
   const itemId = req.params.item_id;
-
+  console.log("Item_id_____", itemId);
   itemFunctions.deleteItemById(itemId)
   .then((postedItem) => {
-    res.send(postedItem);
+    res.redirect("/");
   })
   .catch(err => {
     return console.log("query error", err);

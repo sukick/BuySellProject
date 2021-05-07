@@ -16,6 +16,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/uxfunctions.js"></script>
 
 
   </head>
@@ -29,10 +30,9 @@
     <div class="row">
       <div class="col s10 offset-s1">
         <div class="col s6">
-          <img src="/img/yamaha jr1.jpeg" alt="guitar" width="350" height="400">
+          <img id="productImage" src="" alt="guitar">
         </div>
-        <div class="col s4 post" height="400">
-          <h6>$379</h6>
+        
           <!-- <form action="../items/post" method="POST">
           
              <div class="button">
@@ -42,7 +42,7 @@
            </div>
            </form> -->
 
-          <form action="../items/post" method="POST">
+          <form action="/items/post" method="POST">
             <label for="brand">Brand:</label>
             <input type="text" id="brand" name="brand" class="inputlabel">
             <label for="price">Price:</label>
@@ -51,6 +51,8 @@
             <input type="text" id="productnumber" name="productnumber"  class="inputlabel">
             <label for="condition">Condition:</label>
             <input type="text" id="condition" name="condition"  class="inputlabel">
+            <label for="image">Image:</label>
+            <input type="text" id="image" name="image"  class="inputlabel">
             <label for="description" class="itemunit lastitem">Description:</label>
             <input type="text" id="description" name="description"  class="inputlabel">
             <div class="button">

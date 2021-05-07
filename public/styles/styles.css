@@ -105,6 +105,12 @@ btn-small {
 height: 2.5rem !important;
 }
 
+#productImage {
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 400px;
+  max-height: 400px;
+}
 
 
 @media screen and (max-width: 670px){

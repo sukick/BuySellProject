@@ -7,6 +7,8 @@ CREATE TABLE items (
    product_number INTEGER NOT NULL,
    condition VARCHAR(255) NOT NULL,
    description TEXT NOT NULL,
+   image VARCHAR(255),
+   sold BOOLEAN NOT NULL DEFAULT false,
    user_id INTEGER REFERENCES users (user_id)
 );
 

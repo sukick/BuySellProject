@@ -2,16 +2,6 @@ const express = require('express');
 const router = express.Router();
 const itemFunctions = require('../lib/items_queries');
 
-// router.use((req, res, next) => {
-//   // if (!req.cookies.user_id) {
-//   //   res.redirect('/login');
-//   // }
-
-  
-
-//   next();
-// });
-
 // GET /products/
 router.get('/', (req, res) => {
   itemFunctions.getProducts()
@@ -66,7 +56,7 @@ router.post('/post', (req, res) => {
   };
   itemFunctions.postItemById(item)
   .then((postedItem) => {
-    
+
     res.redirect("/items/" + postedItem.items_id);
   })
   .catch(err => {

@@ -3,17 +3,12 @@ const router = express.Router();
 const userFunctions = require('../lib/users_queries');
 const itemFunctions = require('../lib/items_queries');
 
-// const bodyParser = require('body-parser');
-// app.use(bodyParser);
-
-
 const funcThatReturnsRouter = (db) => {
   // GET
   router.get('/', (req, res) => {
     userFunctions.getUsers()
       .then((user) => {
         res.json(user);
-        // res.render('posts', {posts: response.rows});
       })
       .catch(err => {
         return console.log("query error", err);
@@ -41,15 +36,7 @@ const funcThatReturnsRouter = (db) => {
         return console.log("query error", err);
       })
   });
-
-
-
-
-
   return router;
 };
-
-
-
 
 module.exports = funcThatReturnsRouter;

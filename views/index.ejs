@@ -3,10 +3,8 @@
   <head>
     <title>Home Page</title>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
-
     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Icons CSS -->
@@ -78,13 +76,8 @@
                 <label for="price" class="itemunit cardunit">Price:  <%= product.price %> </label>
                 <p> <%= product.description %>
                 </p>
-
-
               </div>
-
             <% } %>
-
-
 
           <div class="card-action">
             <% if (  product.sold ) { %>

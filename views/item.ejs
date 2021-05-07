@@ -31,26 +31,56 @@
     <div class="row">
       <div class="col s10 offset-s1">
         <div class="col s6">
-          <img src="<%= item.image %>" alt="guitar" width="350" height="400">
+          <img class="productImage" src="<%= item.image %>" alt="guitar" onerror="this.src='https://pngimage.net/wp-content/uploads/2018/06/guitar-outline-png-5.png'">
         </div>
+
         <div class="col s4">
           <h3>$<%= item.price %></h3>
-          <table class="itemstable">
-            <form action="/items/<%= item.items_id %>" method="POST">
-            <label for="brand" class="itemunit">Brand: <%= item.brand %></label><br>
-            <label for="price" class="itemunit">Price: $<%= item.price %></label><br>
-            <label for="product_number" class="itemunit"> Product_number: <%= item.product_number %></label><br>
-            <label for="condition" class="itemunit">Condition: <%= item.condition %></label><br>
-            <label for="image" class="itemunit">Image: <%= item.image %></label><br>
-            <label for="description" class="itemunit lastitem">Description: <%= item.description %></label><br>
+
+          <form action="/items/<%= item.items_id %>" method="POST">
+            <label for="brand" class="inputlabel itemsstyle">Brand: <%= item.brand %></label><br>
+            <label for="price" class="inputlabel itemsstyle">Price: $<%= item.price %></label><br>
+            <label for="product_number" class="inputlabel itemsstyle"> Product_number: <%= item.product_number %></label><br>
+            <label for="condition" class="inputlabel itemsstyle">Condition: <%= item.condition %></label><br>
+            <label for="image" class="inputlabel itemsstyle">Image: <%= item.image %></label><br>
+            <label for="description" class="inputlabel lastitem itemsstyle">Description: <%= item.description %></label><br>
             <a class="waves-effect waves-light btn-small center-align sold"><i class="material-icons left sold">attach_money</i>BUY</a>
+
+
             <button type="submit" name="action" class="waves-effect waves-light btn-small center-align"><i class="material-icons left">attach_money</i>DELETE</button>
           </form>
-          </table >
+
         </div>
       </div>
 
     </div>
+
+
+    <footer class="page-footer stickfooter">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">STRUMMER</h5>
+            <p class="grey-text text-lighten-4">Strummer is guitar marketplace where you can obtain best guitars to become rockstar.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Post</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2021 Copyright STRUMMER
+
+        </div>
+      </div>
+    </footer>
+
 
 
   </body>

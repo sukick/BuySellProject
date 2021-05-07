@@ -9,7 +9,7 @@
  <!-- Icons CSS -->
  <link rel="preconnect" href="https://fonts.gstatic.com">
  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
- 
+
 
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -32,17 +32,10 @@
     <div class="row">
       <div class="col s10 offset-s1">
         <div class="col s6">
-          <img id="productImage" src="" alt="add guitar image">
+          <img class="productImage" src= '' alt="abc" onerror="this.src='https://pngimage.net/wp-content/uploads/2018/06/guitar-outline-png-5.png'">
         </div>
-        
-          <!-- <form action="../items/post" method="POST">
-          
-             <div class="button">
-             <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
-               <i class="material-icons right">send</i>
-             </button>
-           </div>
-           </form> -->
+
+        <div class="col s4">
 
           <form action="/items/post" method="POST">
             <label for="brand">Brand:</label>
@@ -58,16 +51,42 @@
             <label for="description" class="itemunit lastitem">Description:</label>
             <input type="text" id="description" name="description"  class="inputlabel">
             <div class="button">
+
               <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
                 <i class="material-icons right"></i>
               </button>
           </form >
         </div>
       </div>
-      
+    </div>
+
       <!-- <a class="waves-effect waves-light btn-small center-align"><i class="material-icons left">attach_money</i>SELL</a> -->
     </div>
 
+    <footer class="page-footer stickfooter">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">STRUMMER</h5>
+            <p class="grey-text text-lighten-4">Strummer is guitar marketplace where you can obtain best guitars to become rockstar.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Post</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2021 Copyright STRUMMER
+
+        </div>
+      </div>
+    </footer>
 
   </body>
 

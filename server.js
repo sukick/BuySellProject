@@ -50,9 +50,9 @@ app.get('/api/users', (req, res) => {
 })
 
 app.get("/", (req, res) => {
-  
+
   //let userData = '';
-  
+
   itemFunctions.getProducts()
     .then((products) => {
       //userData = items;

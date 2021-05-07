@@ -43,8 +43,14 @@ h2 {
   float: left;
 }
 
+
+
 .box:hover {
-  box-shadow: 0 0 11px #ee6e73;
+  box-shadow: 0 0 11px #ffa000;
+}
+
+img {
+  background: url(http://goo.gl/vyAs27) no-repeat scroll 0 0;
 }
 
 .subtext {
@@ -56,11 +62,11 @@ h2 {
 }
 
 .min label {
-  color: #ee6e73;
+  color: #ffa000;
 }
 
 .max label {
-  color: #ee6e73;
+  color: #ffa000;
 }
 
 .filter {
@@ -78,7 +84,7 @@ btn-small {
 }
 
 .page-footer {
-  background-color: #ffa000 ;
+  background-color: #ffa000 !important;
 }
 
 /*item page*/
@@ -94,29 +100,43 @@ btn-small {
   margin-top:2rem;
 }
 .cardunit {
-  margin-right: 3rem;;
+  margin-right: 2rem;;
 }
 
 .itemunit {
   margin-top:2rem;
 }
 
+/* .itemsstyle {
+  margin-bottom: 5rem;
+} */
+
 .lastitem {
   margin-bottom: 2rem;
+}
+.productImage {
+  height: 35rem;
+  width: 27rem;
+}
+
+.card-image {
+  height: 25rem;
+  width: 20rem;
 }
 
 /*post page*/
 .inputlabel{
-height: 2.5rem !important;
+height: 2rem;
 }
 
-#productImage {
-  min-width: 200px;
-  min-height: 200px;
-  max-width: 400px;
-  max-height: 400px;
-}
 
+
+.stickfooter {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
 
 @media screen and (max-width: 670px){
   header{

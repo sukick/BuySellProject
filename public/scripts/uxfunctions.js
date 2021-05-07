@@ -16,6 +16,13 @@ $(function() {
     }
   })
 
+  $(".sold").on('click', function() {
+
+    $( this ).text(function(i,text) {return text === "sold" ? "buy" : "sold";
+  })
+
+  });
+
 });
 
 

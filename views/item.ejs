@@ -16,6 +16,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/uxfunctions.js"></script>
 
 
   </head>
@@ -33,7 +34,6 @@
         </div>
         <div class="col s4">
           <h3>$<%= item.price %></h3>
-          <h3>$<%= item.items_id %></h3>
           <table class="itemstable">
             <form action="/items/<%= item.items_id %>" method="POST">
             <label for="brand" class="itemunit">Brand: <%= item.brand %></label><br>
@@ -42,7 +42,7 @@
             <label for="condition" class="itemunit">Condition: <%= item.condition %></label><br>
             <label for="image" class="itemunit">Image: <%= item.image %></label><br>
             <label for="description" class="itemunit lastitem">Description: <%= item.description %></label><br>
-            <a class="waves-effect waves-light btn-small center-align"><i class="material-icons left">attach_money</i>BUY</a>
+            <a class="waves-effect waves-light btn-small center-align sold"><i class="material-icons left sold">attach_money</i>BUY</a>
             <button type="submit" name="action" class="waves-effect waves-light btn-small center-align"><i class="material-icons left">attach_money</i>DELETE</button>
           </form>
           </table >

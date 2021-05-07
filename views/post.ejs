@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
 
  <!-- Icons CSS -->
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+ <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+ 
 
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -23,14 +25,14 @@
 
   <body>
     <%- include partials/nav.ejs %>
-    <div class="row center-align">
+    <div class="row center-align headline">
       <h2>STRUMMER</h2>
     </div>
 
     <div class="row">
       <div class="col s10 offset-s1">
         <div class="col s6">
-          <img id="productImage" src="" alt="guitar">
+          <img id="productImage" src="" alt="add guitar image">
         </div>
         
           <!-- <form action="../items/post" method="POST">
@@ -57,7 +59,7 @@
             <input type="text" id="description" name="description"  class="inputlabel">
             <div class="button">
               <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
+                <i class="material-icons right"></i>
               </button>
           </form >
         </div>

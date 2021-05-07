@@ -9,7 +9,4 @@ CREATE TABLE users (
 );
 
 
---CREATE TABLE favorties(
-  --FOREIGN KEY (user_id) REFERENCES users(id),
-  --FOREIGN KEY (item_id) REFERENCES items(id)
---);
+

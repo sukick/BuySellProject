@@ -1,5 +1,5 @@
 .nav-wrapper {
-  background-color: #ee6e73;
+  background-color: #ffa000;
 }
 
 /* card */
@@ -24,11 +24,16 @@ header{
 }
 
 h2 {
-  color: #ee6e73;
+  color: #ffa000 ;
 }
 
+.tagline {
+  color: #ffa000;
+}
 
-
+.headline {
+  font-family: 'Lobster', cursive;
+}
 
 .box {
   transition: box-shadow .3s;
@@ -43,7 +48,7 @@ h2 {
 }
 
 .subtext {
-  color: #ee6e73;
+  color: #424242 ;
 }
 
 .min, .max {
@@ -73,7 +78,7 @@ btn-small {
 }
 
 .page-footer {
-  background-color: ee6e73;
+  background-color: #ffa000 ;
 }
 
 /*item page*/

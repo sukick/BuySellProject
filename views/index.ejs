@@ -3,10 +3,8 @@
   <head>
     <title>Home Page</title>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
-
     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <!-- Icons CSS -->
@@ -15,7 +13,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
     <!--Let browser know website is optimized for mobile-->
@@ -41,7 +39,7 @@
     <div class="row">
       <div class="right filter">
         <form action="../items/filter" method="POST">
-          
+
          <div class="left min">
           <label for="min">Min:</label>
           <input type="text" id="min" name="min">
@@ -49,7 +47,7 @@
         <div class="right max">
           <label for="max">Max:</label>
           <input type="text" id="max" name="max">
-        </div> 
+        </div>
         <div class="button">
           <button class="btn waves-effect waves-light btn-small" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
@@ -59,7 +57,7 @@
 
      </div>
     </div>
-  
+
     <div class="row">
       <%   for (let product of products) {  %>
 
@@ -78,20 +76,15 @@
                 <label for="price" class="itemunit cardunit">Price:  <%= product.price %> </label>
                 <p> <%= product.description %>
                 </p>
-              
-
               </div>
-        
             <% } %>
-
-
 
           <div class="card-action">
             <% if (  product.sold ) { %>
               <a href= "#" class="waves-effect waves-light btn-small"><i class="material-icons left"></i>SOLD</a>
             <% } else { %>
               <a href= "/items/<%= product.items_id%>" class="waves-effect waves-light btn-small"><i class="material-icons left">attach_money</i>BUY</a>
-            <% } %> 
+            <% } %>
             <a class="btn-floating btn-small waves-effect waves-light red lighten-2 right fav" ><i class="material-icons " >favorite</i></a>
             <a href="mailto:admin@strummer.com" target="_blank" class="btn-floating btn-small waves-effect waves-light red lighten-2 right "><i class="material-icons ">email</i></a>
           </div>
